@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: robo_annuncio_production
-  username: robo_annuncio
-  password: <%= ENV['ROBO_ANNUNCIO_DATABASE_PASSWORD'] %>
+  # username: robo_annuncio
+  # password: <%= ENV['ROBO_ANNUNCIO_DATABASE_PASSWORD'] %>
