@@ -74,6 +74,14 @@ class CH
     
     @b.file_field(:id, "upload_id_imgannuncio_doc").set 'C:\Users\Desenvolvimento\Downloads\40440_1502511985.jpg'
 
+    
+    @b.button(:value => 'CARICA').click
+
+    sleep(5)
+
+    @b.checkbox(:name => 'accettopub').set
+    
+
 
 
     # Localiza a tabela (table) na pagina cujo indice e "0" (a unica tabela que existe na pagina - tabela dos versiculos)
