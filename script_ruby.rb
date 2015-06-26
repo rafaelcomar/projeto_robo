@@ -10,7 +10,7 @@ class CH
   def initialize
 
     http = Net::HTTP.new(@host, @port)
-    http.read_timeout = 5000
+    http.read_timeout = 50000000
 
     # Configura e inicializa o navegador Firefox
     Watir::always_locate = false
@@ -23,7 +23,7 @@ class CH
     @b.text_field(:name => 'usernamemb').set 'info@dolcerelax.com'
 
     # Aguarda 2 segundos para o filtro ser processado
-    sleep(2)
+    # sleep(2)
 
     # localiza o objeto "input" da pagina cujo id e "tabela:j_idt36_filter" (Capitulo) e preenche com o valor "51"
     @b.text_field(:name => 'passwordmb').set 'maxitaly'
@@ -43,6 +43,38 @@ class CH
 
     @b.select_list(:id => 'categoriapub').select 'donna cerca donna'
     
+    @b.select_list(:id => 'cittapub').select 'Agrigento'
+    
+    @b.text_field(:id => 'indirizzopub').set 'rua teste'
+    @b.text_field(:id => 'cappub').set '99999'
+    @b.text_field(:id => 'localitapub').set 'KKKKKKKKKKK'
+    
+
+    @b.text_field(:id => 'tit').set 'TITOLO'
+    @b.text_field(:name => 'eta').set '34'
+    @b.text_field(:name => 'contatto').set '34999999999'
+    @b.textarea(:id => 'testoann').set 'TEXTO DE EXEMPLO PRO annuncio'
+
+    @b.select_list(:id => 'emailverificate').select 'info@dolcerelax.com'
+
+    # @b.label(:text => 'Promuovi il mio annuncio').parent.checkbox :value => 'SITOPLIST'
+    @b.checkbox(:value => 'SITOPLIST').set
+
+    sleep(2)
+    
+    @b.select_list(:id => 'tipo_toplist').select 'Climb the Top 1'
+
+    sleep(2)
+
+    @b.select_list(:id => 'num_giorni').select '3 giorni'
+
+    sleep(2)
+
+    @b.select_list(:id => 'fascia_oraria').select '10:00/12:00'    
+    
+    @b.file_field(:id, "upload_id_imgannuncio_doc").set 'C:\Users\Desenvolvimento\Downloads\40440_1502511985.jpg'
+
+
 
     # Localiza a tabela (table) na pagina cujo indice e "0" (a unica tabela que existe na pagina - tabela dos versiculos)
     # tabela = @b.table(:index,0)
