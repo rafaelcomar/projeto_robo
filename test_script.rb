@@ -45,68 +45,10 @@ class CH
     # Aguarda 2 segundos para o filtro ser processado
     # sleep(2)
 
-    @b.link(:text => 'Pubblica un nuovo annuncio').click
-    
-    @b.button(:value => 'Ho più di 18 anni. Accetta e ENTRA').click
-
-    @b.select_list(:id => 'categoriapub').select 'donna cerca donna'
-    
-    @b.select_list(:id => 'cittapub').select 'Agrigento'
-    
-    @b.text_field(:id => 'indirizzopub').set 'rua teste'
-    @b.text_field(:id => 'cappub').set '99999'
-    @b.text_field(:id => 'localitapub').set 'KKKKKKKKKKK'    
-
-    @b.text_field(:id => 'tit').set 'TITOLO'
-    @b.text_field(:name => 'eta').set '34'
-    @b.text_field(:name => 'contatto').set '34999999999'
-    @b.textarea(:id => 'testoann').set 'TEXTO DE EXEMPLO PRO annuncio'
-
-    @b.select_list(:id => 'emailverificate').select 'franc5555@hotmail.it'
-
-    # @b.label(:text => 'Promuovi il mio annuncio').parent.checkbox :value => 'SITOPLIST'
-    @b.checkbox(:value => 'SITOPLIST').set
-
-    sleep(4)
-    
-    @b.select_list(:id => 'tipo_toplist').select 'Climb the Top 1'
-
-    sleep(3)
-
-    @b.select_list(:id => 'num_giorni').select '3 giorni'
-
-    sleep(3)
-
-    @b.select_list(:id => 'fascia_oraria').select '10:00/12:00' 
-
-    sleep(3)
-
-    @b.checkbox(:name => 'accettopub').set
-    
-    @b.button(:value => 'Continua').click
-
-    sleep(2)
-
-    @b.button(:value => 'Continua').click
-
-    sleep(5)
+     @b.link(:text => 'TITOLO').click
 
     @b.button(:value => 'GESTIONE IMMAGINI').click
-
-    @b.file_field(:id, "upload_id_imgannuncio_doc").set 'C:\Users\Desenvolvimento\Downloads\40440_1502511985.jpg'
-
-    @b.button(:value => 'CARICA').click
-
     sleep(2)
-    @b.file_field(:id, "upload_id_imgannuncio_doc").set 'C:\Users\Desenvolvimento\Downloads\11425810_1660007390881429_2557554007159987410_n.jpg'
-
-    @b.button(:value => 'CARICA').click
-
-    sleep(5)
-    @b.button(:value => 'Fine').click
-
-    @b.button(:value => 'GESTIONE IMMAGINI').click
-
     @b.image(:id => 'img1').click
 
     # @b.input(:id => 'x_src').to_subtype.set("0")
@@ -114,19 +56,19 @@ class CH
     # @b.input(:id => 'w_src').to_subtype.set("450")
     # @b.input(:id => 'h_src').to_subtype.set("323.7410071942446")
 
+    # @b.hidden(id: 'x_src').set '0'
+    # @b.hidden(id: 'y_src').set '23'
+    # @b.hidden(id: 'w_src').set '450'
+    # @b.hidden(id: 'h_src').set '323.7410071942446'
 
-    @b.execute_script("document.getElementsByName('#{x_src}')[0].setAttribute('type','text');")
-    @b.text_field(:id, 'x_src').set '0'
+    # @b.execute_script("document.getElementById('x_src').value = 0;")
+    # @b.execute_script("document.getElementById('y_src').value = 23;")
+    # @b.execute_script("document.getElementById('w_src').value = 450;")
+    # @b.execute_script("document.getElementById('h_src').value = 323.7410071942446;")
 
 
-    @b.execute_script("document.getElementsByName('#{y_src}')[0].setAttribute('type','text');")
-    @b.text_field(:id, 'y_src').set '23'
-    @b.execute_script("document.getElementsByName('#{x_src}')[0].setAttribute('type','text');")
-    @b.text_field(:id, 'w_src').set '450'
-    @b.execute_script("document.getElementsByName('#{x_src}')[0].setAttribute('type','text');")
-    @b.text_field(:id, 'h_src').set '323.7410071942446'
 
-    @b.button(:value => 'Salva').click   
+    @b.button(:name => 'continua').click   
 
 
 
@@ -169,10 +111,6 @@ class CH
 
   end
 
-  def action_1
-    # something_to_the_db
-    redirect_to :back
-  end
 
 end
 
